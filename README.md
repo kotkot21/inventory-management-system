@@ -1,5 +1,7 @@
 # inventory-management-system
 
+![1712465900778](image/README/1712465900778.png)
+
 ## API Method Request
 
 ### Product methods
