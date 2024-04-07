@@ -2,7 +2,13 @@
 
 ![1712465900778](image/README/1712465900778.png)
 
-## API Method Request
+### SwaggerHub Link: https://app.swaggerhub.com/apis/AhmadNaser-076/Inventory-managment-system/1.0
+
+
+
+### API Method Request
+
+
 
 ### Product methods
 
@@ -22,12 +28,7 @@
 | Delete                     | delete Employee record By ID | deletes the specified record                                              | 200: OK (Successful operation) | http://localhost:8080/Employee/111                                                                                                                                                                     | {<br />"EmployeeID":"111"<br />"EmployeeName":"ahmad",<br />"ContactInfo":"contact@info",<br />"Position":"manager",<br />"salary":"2000",<br />"warhouseID":"333"<br />} |
 | PUT                        | edit Employee by ID          | replaces a representation of the target resource with the request payload | 200: OK (Successful operation) | http://localhost:8080/Employee/111<br /><br />{<br />"salary":"3900",<br />}                                                                                                                           | {<br />"EmployeeID":"111"<br />"EmployeeName":"ahmad",<br />"ContactInfo":"contact@info",<br />"Position":"manager",<br />"salary":"3900",<br />"warhouseID":"333"<br />} |
 
-
-
-
-
 ### Order Methods
-
 
 | HTTP request (method URI) | Operation                  | Description                                                               | HTTP status codes               | Request sample                                                                                                                                                                                                     | Response sample                                                                                                                                                                             |
 | -------------------------- | -------------------------- | ------------------------------------------------------------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -36,14 +37,7 @@
 | Delete                     | delete Order record By ID | deletes the specified record                                              | 200: OK (Successful operation) | http://localhost:8080/Order/10                                                                                                                                                                                     | {<br />"orderId":"10",<br />"orderDate":"**2024-06-15**",<br />"DeliveryDate":"**2024-05-15**",<br />"TotalAmount":"3",<br />"CustomerID":"353",<br />"EmployeeID":"111"<br />} |
 | PUT                        | edit Order by ID           | replaces a representation of the target resource with the request payload | 200: OK (Successful operation) | http://localhost:8080/Order/10<br />{<br />"TotalAmount":"5",<br />"orderDate":"**2024-06-16**",<br />}                                                                                                      | {<br />"orderId":"10",<br />"orderDate":"**2024-06-16**",<br />"DeliveryDate":"**2024-05-15**",<br />"TotalAmount":"3",<br />"CustomerID":"353",<br />"EmployeeID":"111"<br />} |
 
-
-
-
-
-
-
 ### Customer Methods
-
 
 | HTTP request (method URI) | Operation                    | Description                                                               | HTTP status codes               | Request sample                                                                                                                                   | Response sample                                                                                                      |
 | -------------------------- | ---------------------------- | ------------------------------------------------------------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------- |
@@ -54,7 +48,6 @@
 
 ### Transaction Methods
 
-
 | HTTP request (method URI) | Operation                       | Description                                                               | HTTP status codes               | Request sample                                                                                                                                                                                                                                        | Response sample                                                                                                                                                                                                                 |
 | -------------------------- | ------------------------------- | ------------------------------------------------------------------------- | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | POST                       | Creates a new Transaction      | send data to a server to add a Transaction                                | 200: OK (Successful operation) | http://localhost:8080/Transaction<br />body:<br />{<br />"TransactionDate":"2024-08-1".<br />"TransactionType":"Sale",<br />"Quantity":"5",<br />"TotalPrice":"200",<br />"ProductID": "123",<br />"WarHouseID":"555",<br />"EmployeeID":"111"<br />} | {<br />"TransactionID":"131",<br />"TransactionDate":"2024-08-1".<br />"TransactionType":"Sale",<br />"Quantity":"5",<br />"TotalPrice":"200",<br />"ProductID": "123",<br />"WarHouseID":"555",<br />"EmployeeID":"111"<br />} |
@@ -62,12 +55,7 @@
 | Delete                     | delete Transaction record By ID | deletes the specified record                                              | 200: OK (Successful operation) | http://localhost:8080/Transaction/131                                                                                                                                                                                                                 | {<br />"TransactionID":"131",<br />"TransactionDate":"2024-08-1".<br />"TransactionType":"Sale",<br />"Quantity":"5",<br />"TotalPrice":"200",<br />"ProductID": "123",<br />"WarHouseID":"555",<br />"EmployeeID":"111"<br />} |
 | PUT                        | edit Transaction by ID          | replaces a representation of the target resource with the request payload | 200: OK (Successful operation) | http://localhost:8080/Transaction/131<br /><br />{<br />"Quantity":"4",<br />"TotalPrice":"160"<br />}                                                                                                                                                | {<br />"TransactionID":"131",<br />"TransactionDate":"2024-08-1".<br />"TransactionType":"Sale",<br />"Quantity":"4",<br />"TotalPrice":"160"<br />"ProductID": "123",<br />"WarHouseID":"555",<br />"EmployeeID":"111"<br />}  |
 
-
-
-
-
 ### Supplier Methods
-
 
 | HTTP request (method URI) | Operation                    | Description                                                               | HTTP status codes               | Request sample                                                                                                                                   | Response sample                                                                                                             |
 | -------------------------- | ---------------------------- | ------------------------------------------------------------------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
@@ -76,13 +64,7 @@
 | Delete                     | delete Supplier record By ID | deletes the specified record                                              | 200: OK (Successful operation) | http://localhost:8080/Supplier/444                                                                                                               | {<br />"SupplierID":"444",<br />"SupplierName":"khalid",<br />"ContactInfo":"khalid@info",<br />"Address":"birzeit"<br />}  |
 | PUT                        | edit Supplier by ID          | replaces a representation of the target resource with the request payload | 200: OK (Successful operation) | http://localhost:8080/Supplier/444<br />{<br />"SupplierName":"mahmoud",<br /><br />}                                                            | {<br />"SupplierID":"444",<br />"SupplierName":"mahmoud",<br />"ContactInfo":"khalid@info",<br />"Address":"birzeit"<br />} |
 
-
-
-
 ### Category Methods
-
-
-
 
 | HTTP request (method URI) | Operation                     | Description                                                               | HTTP status codes               | Request sample                                                                                                                                                                                                                            | Response sample                                                                                                                                                                                   |
 | -------------------------- | ----------------------------- | ------------------------------------------------------------------------- | ------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -91,12 +73,7 @@
 | Delete                     | delete Category record By ID | deletes the specified record                                              | 200: OK (Successful operation) | http://localhost:8080/Category/333                                                                                                                                                                                                        | {<br />"CategoryID":"333",<br />"CategoryName":"Electronics"<br />"Description":"This category includes electronic devices such as smartphones, laptops, tablets, and other related items"<br />} |
 | PUT                        | edit Category by ID           | replaces a representation of the target resource with the request payload | 200: OK (Successful operation) | http://localhost:8080/Category/333<br />{<br />"CategoryName":"frozenfoods"<br />"Description":"This category includess frozen fish , meats and other related items"<br />}                                                              | {<br />"CategoryID":"333",<br />"Description":"This category includess frozen fish , meats and other related items"}                                                                             |
 
-
-
-
-
 ### Warhouse Methods
-
 
 | HTTP request (method URI) | Operation                    | Description                                                               | HTTP status codes               | Request sample                                                                                                        | Response sample                                                                     |
 | -------------------------- | ---------------------------- | ------------------------------------------------------------------------- | ------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |

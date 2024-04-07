@@ -1,0 +1,1728 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "version": "1.0",
+    "title": "Inventory managment system",
+    "description": "Inventory Management System is a vital tool for businesses of all sizes to efficiently manage their inventory operations, optimize supply chain processes, and maintain a competitive edge in todays dynamic marketplace By leveraging advanced technology and automation, businesses can streamline their inventory management processes, reduce costs, and improve overall operational efficiency",
+    "contact": {
+      "name": "IMS",
+      "url": "IMS.com",
+      "email": "support@IMS.com"
+    },
+    "license": {
+      "name": "IMs license"
+    }
+  },
+  "paths": {
+    "/product": {
+      "post": {
+        "summary": "Add a new product",
+        "operationId": "addProduct",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ProductID": {
+                    "type": "string"
+                  },
+                  "ProductName": {
+                    "type": "string"
+                  },
+                  "Description": {
+                    "type": "string"
+                  },
+                  "Price": {
+                    "type": "number"
+                  },
+                  "QuantityAvailable": {
+                    "type": "integer"
+                  },
+                  "CategoryID": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ProductID": {
+                      "type": "string"
+                    },
+                    "ProductName": {
+                      "type": "string"
+                    },
+                    "Description": {
+                      "type": "string"
+                    },
+                    "Price": {
+                      "type": "number"
+                    },
+                    "QuantityAvailable": {
+                      "type": "integer"
+                    },
+                    "CategoryID": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all products",
+        "operationId": "getAllProducts",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "ProductID": {
+                        "type": "string"
+                      },
+                      "ProductName": {
+                        "type": "string"
+                      },
+                      "Description": {
+                        "type": "string"
+                      },
+                      "Price": {
+                        "type": "number"
+                      },
+                      "QuantityAvailable": {
+                        "type": "integer"
+                      },
+                      "CategoryID": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/product/{productId}": {
+      "delete": {
+        "summary": "Delete product by ID",
+        "operationId": "deleteProductById",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "description": "ID of the product to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "summary": "Edit product by ID",
+        "operationId": "editProductById",
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "description": "ID of the product to edit",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "ProductID": {
+                    "type": "string"
+                  },
+                  "ProductName": {
+                    "type": "string"
+                  },
+                  "Description": {
+                    "type": "string"
+                  },
+                  "Price": {
+                    "type": "number"
+                  },
+                  "QuantityAvailable": {
+                    "type": "integer"
+                  },
+                  "CategoryID": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ProductID": {
+                      "type": "string"
+                    },
+                    "ProductName": {
+                      "type": "string"
+                    },
+                    "Description": {
+                      "type": "string"
+                    },
+                    "Price": {
+                      "type": "number"
+                    },
+                    "QuantityAvailable": {
+                      "type": "integer"
+                    },
+                    "CategoryID": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/employee": {
+      "post": {
+        "summary": "Add a new employee",
+        "operationId": "addEmployee",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "EmployeeID": {
+                    "type": "string"
+                  },
+                  "EmployeeName": {
+                    "type": "string"
+                  },
+                  "ContactInfo": {
+                    "type": "string"
+                  },
+                  "Position": {
+                    "type": "string"
+                  },
+                  "Salary": {
+                    "type": "number"
+                  },
+                  "WarehouseID": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "EmployeeID": {
+                      "type": "string"
+                    },
+                    "EmployeeName": {
+                      "type": "string"
+                    },
+                    "ContactInfo": {
+                      "type": "string"
+                    },
+                    "Position": {
+                      "type": "string"
+                    },
+                    "Salary": {
+                      "type": "number"
+                    },
+                    "WarehouseID": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all employees",
+        "operationId": "getAllEmployees",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "EmployeeID": {
+                        "type": "string"
+                      },
+                      "EmployeeName": {
+                        "type": "string"
+                      },
+                      "ContactInfo": {
+                        "type": "string"
+                      },
+                      "Position": {
+                        "type": "string"
+                      },
+                      "Salary": {
+                        "type": "number"
+                      },
+                      "WarehouseID": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/employee/{employeeId}": {
+      "delete": {
+        "summary": "Delete employee by ID",
+        "operationId": "deleteEmployeeById",
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "description": "ID of the employee to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "summary": "Edit employee by ID",
+        "operationId": "editEmployeeById",
+        "parameters": [
+          {
+            "name": "employeeId",
+            "in": "path",
+            "description": "ID of the employee to edit",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "EmployeeID": {
+                    "type": "string"
+                  },
+                  "EmployeeName": {
+                    "type": "string"
+                  },
+                  "ContactInfo": {
+                    "type": "string"
+                  },
+                  "Position": {
+                    "type": "string"
+                  },
+                  "Salary": {
+                    "type": "number"
+                  },
+                  "WarehouseID": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "EmployeeID": {
+                      "type": "string"
+                    },
+                    "EmployeeName": {
+                      "type": "string"
+                    },
+                    "ContactInfo": {
+                      "type": "string"
+                    },
+                    "Position": {
+                      "type": "string"
+                    },
+                    "Salary": {
+                      "type": "number"
+                    },
+                    "WarehouseID": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/order": {
+      "post": {
+        "summary": "Place a new order",
+        "operationId": "placeOrder",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "orderId": {
+                    "type": "string"
+                  },
+                  "orderDate": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "DeliveryDate": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "TotalAmount": {
+                    "type": "number"
+                  },
+                  "CustomerID": {
+                    "type": "string"
+                  },
+                  "EmployeeID": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "orderId": {
+                      "type": "string"
+                    },
+                    "orderDate": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "DeliveryDate": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "TotalAmount": {
+                      "type": "number"
+                    },
+                    "CustomerID": {
+                      "type": "string"
+                    },
+                    "EmployeeID": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all orders",
+        "operationId": "getAllOrders",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "orderId": {
+                        "type": "string"
+                      },
+                      "orderDate": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "DeliveryDate": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "TotalAmount": {
+                        "type": "number"
+                      },
+                      "CustomerID": {
+                        "type": "string"
+                      },
+                      "EmployeeID": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/order/{orderId}": {
+      "delete": {
+        "summary": "Delete order by ID",
+        "operationId": "deleteOrderById",
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "description": "ID of the order to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "summary": "Edit order by ID",
+        "operationId": "editOrderById",
+        "parameters": [
+          {
+            "name": "orderId",
+            "in": "path",
+            "description": "ID of the order to edit",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "orderId": {
+                    "type": "string"
+                  },
+                  "orderDate": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "DeliveryDate": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "TotalAmount": {
+                    "type": "number"
+                  },
+                  "CustomerID": {
+                    "type": "string"
+                  },
+                  "EmployeeID": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "orderId": {
+                      "type": "string"
+                    },
+                    "orderDate": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "DeliveryDate": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "TotalAmount": {
+                      "type": "number"
+                    },
+                    "CustomerID": {
+                      "type": "string"
+                    },
+                    "EmployeeID": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer": {
+      "post": {
+        "summary": "Create a new customer",
+        "operationId": "createCustomer",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "CustomerID": {
+                    "type": "string"
+                  },
+                  "CustomerName": {
+                    "type": "string"
+                  },
+                  "ContactInfo": {
+                    "type": "string"
+                  },
+                  "Address": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "CustomerID": {
+                      "type": "string"
+                    },
+                    "CustomerName": {
+                      "type": "string"
+                    },
+                    "ContactInfo": {
+                      "type": "string"
+                    },
+                    "Address": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all customers",
+        "operationId": "getAllCustomers",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "CustomerID": {
+                        "type": "string"
+                      },
+                      "CustomerName": {
+                        "type": "string"
+                      },
+                      "ContactInfo": {
+                        "type": "string"
+                      },
+                      "Address": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customer/{customerId}": {
+      "delete": {
+        "summary": "Delete customer by ID",
+        "operationId": "deleteCustomerById",
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "path",
+            "description": "ID of the customer to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "summary": "Edit customer by ID",
+        "operationId": "editCustomerById",
+        "parameters": [
+          {
+            "name": "customerId",
+            "in": "path",
+            "description": "ID of the customer to edit",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "CustomerID": {
+                    "type": "string"
+                  },
+                  "CustomerName": {
+                    "type": "string"
+                  },
+                  "ContactInfo": {
+                    "type": "string"
+                  },
+                  "Address": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "CustomerID": {
+                      "type": "string"
+                    },
+                    "CustomerName": {
+                      "type": "string"
+                    },
+                    "ContactInfo": {
+                      "type": "string"
+                    },
+                    "Address": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transaction": {
+      "post": {
+        "summary": "Create a new transaction",
+        "operationId": "createTransaction",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "TransactionID": {
+                    "type": "string"
+                  },
+                  "TransactionDate": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "TransactionType": {
+                    "type": "string"
+                  },
+                  "Quantity": {
+                    "type": "integer"
+                  },
+                  "TotalPrice": {
+                    "type": "number"
+                  },
+                  "ProductID": {
+                    "type": "string"
+                  },
+                  "WarHouseID": {
+                    "type": "string"
+                  },
+                  "EmployeeID": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "TransactionID": {
+                      "type": "string"
+                    },
+                    "TransactionDate": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "TransactionType": {
+                      "type": "string"
+                    },
+                    "Quantity": {
+                      "type": "integer"
+                    },
+                    "TotalPrice": {
+                      "type": "number"
+                    },
+                    "ProductID": {
+                      "type": "string"
+                    },
+                    "WarHouseID": {
+                      "type": "string"
+                    },
+                    "EmployeeID": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all transactions",
+        "operationId": "getAllTransactions",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "TransactionID": {
+                        "type": "string"
+                      },
+                      "TransactionDate": {
+                        "type": "string",
+                        "format": "date"
+                      },
+                      "TransactionType": {
+                        "type": "string"
+                      },
+                      "Quantity": {
+                        "type": "integer"
+                      },
+                      "TotalPrice": {
+                        "type": "number"
+                      },
+                      "ProductID": {
+                        "type": "string"
+                      },
+                      "WarHouseID": {
+                        "type": "string"
+                      },
+                      "EmployeeID": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/transaction/{transactionId}": {
+      "delete": {
+        "summary": "Delete transaction by ID",
+        "operationId": "deleteTransactionById",
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "description": "ID of the transaction to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "summary": "Edit transaction by ID",
+        "operationId": "editTransactionById",
+        "parameters": [
+          {
+            "name": "transactionId",
+            "in": "path",
+            "description": "ID of the transaction to edit",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "TransactionID": {
+                    "type": "string"
+                  },
+                  "TransactionDate": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "TransactionType": {
+                    "type": "string"
+                  },
+                  "Quantity": {
+                    "type": "integer"
+                  },
+                  "TotalPrice": {
+                    "type": "number"
+                  },
+                  "ProductID": {
+                    "type": "string"
+                  },
+                  "WarHouseID": {
+                    "type": "string"
+                  },
+                  "EmployeeID": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "TransactionID": {
+                      "type": "string"
+                    },
+                    "TransactionDate": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "TransactionType": {
+                      "type": "string"
+                    },
+                    "Quantity": {
+                      "type": "integer"
+                    },
+                    "TotalPrice": {
+                      "type": "number"
+                    },
+                    "ProductID": {
+                      "type": "string"
+                    },
+                    "WarHouseID": {
+                      "type": "string"
+                    },
+                    "EmployeeID": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/supplier": {
+      "post": {
+        "summary": "Add a new supplier",
+        "operationId": "addSupplier",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "SupplierID": {
+                    "type": "string"
+                  },
+                  "SupplierName": {
+                    "type": "string"
+                  },
+                  "ContactInfo": {
+                    "type": "string"
+                  },
+                  "Address": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "SupplierID": {
+                      "type": "string"
+                    },
+                    "SupplierName": {
+                      "type": "string"
+                    },
+                    "ContactInfo": {
+                      "type": "string"
+                    },
+                    "Address": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all suppliers",
+        "operationId": "getAllSuppliers",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "SupplierID": {
+                        "type": "string"
+                      },
+                      "SupplierName": {
+                        "type": "string"
+                      },
+                      "ContactInfo": {
+                        "type": "string"
+                      },
+                      "Address": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/supplier/{supplierId}": {
+      "delete": {
+        "summary": "Delete supplier by ID",
+        "operationId": "deleteSupplierById",
+        "parameters": [
+          {
+            "name": "supplierId",
+            "in": "path",
+            "description": "ID of the supplier to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "summary": "Edit supplier by ID",
+        "operationId": "editSupplierById",
+        "parameters": [
+          {
+            "name": "supplierId",
+            "in": "path",
+            "description": "ID of the supplier to edit",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "SupplierID": {
+                    "type": "string"
+                  },
+                  "SupplierName": {
+                    "type": "string"
+                  },
+                  "ContactInfo": {
+                    "type": "string"
+                  },
+                  "Address": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "SupplierID": {
+                      "type": "string"
+                    },
+                    "SupplierName": {
+                      "type": "string"
+                    },
+                    "ContactInfo": {
+                      "type": "string"
+                    },
+                    "Address": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/category": {
+      "post": {
+        "summary": "Add a new category",
+        "operationId": "addCategory",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "CategoryID": {
+                    "type": "string"
+                  },
+                  "CategoryName": {
+                    "type": "string"
+                  },
+                  "Description": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "CategoryID": {
+                      "type": "string"
+                    },
+                    "CategoryName": {
+                      "type": "string"
+                    },
+                    "Description": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all categories",
+        "operationId": "getAllCategories",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "CategoryID": {
+                        "type": "string"
+                      },
+                      "CategoryName": {
+                        "type": "string"
+                      },
+                      "Description": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/category/{categoryId}": {
+      "delete": {
+        "summary": "Delete category by ID",
+        "operationId": "deleteCategoryById",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "description": "ID of the category to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "summary": "Edit category by ID",
+        "operationId": "editCategoryById",
+        "parameters": [
+          {
+            "name": "categoryId",
+            "in": "path",
+            "description": "ID of the category to edit",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "CategoryID": {
+                    "type": "string"
+                  },
+                  "CategoryName": {
+                    "type": "string"
+                  },
+                  "Description": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "CategoryID": {
+                      "type": "string"
+                    },
+                    "CategoryName": {
+                      "type": "string"
+                    },
+                    "Description": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/warehouse": {
+      "post": {
+        "summary": "Add a new warehouse",
+        "operationId": "addWarehouse",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "WarhouseID": {
+                    "type": "string"
+                  },
+                  "Location": {
+                    "type": "string"
+                  },
+                  "Capacity": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "WarhouseID": {
+                      "type": "string"
+                    },
+                    "Location": {
+                      "type": "string"
+                    },
+                    "Capacity": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all warehouses",
+        "operationId": "getAllWarehouses",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "WarhouseID": {
+                        "type": "string"
+                      },
+                      "Location": {
+                        "type": "string"
+                      },
+                      "Capacity": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/warehouse/{warehouseId}": {
+      "delete": {
+        "summary": "Delete warehouse by ID",
+        "operationId": "deleteWarehouseById",
+        "parameters": [
+          {
+            "name": "warehouseId",
+            "in": "path",
+            "description": "ID of the warehouse to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "summary": "Edit warehouse by ID",
+        "operationId": "editWarehouseById",
+        "parameters": [
+          {
+            "name": "warehouseId",
+            "in": "path",
+            "description": "ID of the warehouse to edit",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "WarhouseID": {
+                    "type": "string"
+                  },
+                  "Location": {
+                    "type": "string"
+                  },
+                  "Capacity": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "WarhouseID": {
+                      "type": "string"
+                    },
+                    "Location": {
+                      "type": "string"
+                    },
+                    "Capacity": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Product": {
+        "type": "object",
+        "properties": {
+          "ProductID": {
+            "type": "string"
+          },
+          "ProductName": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "Price": {
+            "type": "number"
+          },
+          "QuantityAvailable": {
+            "type": "integer"
+          },
+          "CategoryID": {
+            "type": "string"
+          }
+        }
+      },
+      "Employee": {
+        "type": "object",
+        "properties": {
+          "EmployeeID": {
+            "type": "string"
+          },
+          "EmployeeName": {
+            "type": "string"
+          },
+          "ContactInfo": {
+            "type": "string"
+          },
+          "Position": {
+            "type": "string"
+          },
+          "Salary": {
+            "type": "number"
+          },
+          "WarehouseID": {
+            "type": "string"
+          }
+        }
+      },
+      "Order": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "string"
+          },
+          "orderDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "DeliveryDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "TotalAmount": {
+            "type": "number"
+          },
+          "CustomerID": {
+            "type": "string"
+          },
+          "EmployeeID": {
+            "type": "string"
+          }
+        }
+      },
+      "Customer": {
+        "type": "object",
+        "properties": {
+          "CustomerID": {
+            "type": "string"
+          },
+          "CustomerName": {
+            "type": "string"
+          },
+          "ContactInfo": {
+            "type": "string"
+          },
+          "Address": {
+            "type": "string"
+          }
+        }
+      },
+      "Transaction": {
+        "type": "object",
+        "properties": {
+          "TransactionID": {
+            "type": "string"
+          },
+          "TransactionDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "TransactionType": {
+            "type": "string"
+          },
+          "Quantity": {
+            "type": "integer"
+          },
+          "TotalPrice": {
+            "type": "number"
+          },
+          "ProductID": {
+            "type": "string"
+          },
+          "WarHouseID": {
+            "type": "string"
+          },
+          "EmployeeID": {
+            "type": "string"
+          }
+        }
+      },
+      "Supplier": {
+        "type": "object",
+        "properties": {
+          "SupplierID": {
+            "type": "string"
+          },
+          "SupplierName": {
+            "type": "string"
+          },
+          "ContactInfo": {
+            "type": "string"
+          },
+          "Address": {
+            "type": "string"
+          }
+        }
+      },
+      "Category": {
+        "type": "object",
+        "properties": {
+          "CategoryID": {
+            "type": "string"
+          },
+          "CategoryName": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          }
+        }
+      },
+      "Warehouse": {
+        "type": "object",
+        "properties": {
+          "WarhouseID": {
+            "type": "string"
+          },
+          "Location": {
+            "type": "string"
+          },
+          "Capacity": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}
