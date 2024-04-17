@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "10bee47d-3440-44ed-83b2-52f5712a620f",
+		"name": "Orders",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33489440"
+	},
+	"item": [
+		{
+			"name": "PostOrders",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"deliveryDate\": null,\r\n        \"employeeID\": 3,\r\n        \"totalAmount\": null,\r\n        \"customerID\": null,\r\n        \"productID\": null,\r\n        \"orderDate\": null\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetOrders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteOrders",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"orderID\": 1\r\n }\r\n     ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Orders/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Orders",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"orderID\": 3,\r\n        \"deliveryDate\": null,\r\n        \"employeeID\": 2,\r\n        \"totalAmount\": null,\r\n        \"customerID\": null,\r\n        \"productID\": null,\r\n        \"orderDate\": null\r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Orders/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Orders",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

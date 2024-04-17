@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "d0f2be69-b3f6-4233-b339-bc4b45b61ab8",
+		"name": "WarHouse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33489440"
+	},
+	"item": [
+		{
+			"name": "PostWarhouse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/WarHouse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"WarHouse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Getwarhouse",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/WarHouse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"WarHouse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteWarhouse",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"warHouseId\": 852\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/WarHouse/852",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"WarHouse",
+						"852"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutWarhouse",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

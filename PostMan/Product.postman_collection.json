@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "cd88361d-380c-45a0-a039-fe738a1ed437",
+		"name": "Product",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33489440"
+	},
+	"item": [
+		{
+			"name": "PostProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"des\",\r\n    \"price\": 100,\r\n    \"quantityAvailable\": 15,\r\n    \"categoryID\": 4,\r\n    \"productName\": \"prod\",\r\n    \"supplierID\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetProduct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/Product",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteRequest",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"description\": \"sed\",\r\n        \"price\": 100,\r\n        \"quantityAvailable\": 15,\r\n        \"productID\": 2,\r\n        \"categoryID\": null,\r\n        \"productName\": \"prod\",\r\n        \"supplierID\": null\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Product/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Product",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutProduct",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"description\": \"sed\",\r\n        \"price\": 100,\r\n        \"quantityAvailable\": 15,\r\n        \"productID\": 1,\r\n        \"categoryID\": null,\r\n        \"productName\": \"prod\",\r\n        \"supplierID\": null\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/Product/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Product",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
