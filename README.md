@@ -1,6 +1,7 @@
 # inventory-management-system
 
-![1712465900778](image/README/1712465900778.png)
+![1712344108601](https://github.com/kotkot21/inventory-management-system/assets/82829683/8204d8c0-d9d0-465b-b9e6-d8748a39d96e)
+
 
 ### SwaggerHub Link: https://app.swaggerhub.com/apis/AhmadNaser-076/Inventory-managment-system/1.0
 
